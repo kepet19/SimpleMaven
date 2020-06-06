@@ -27,6 +27,12 @@ the command for running a chosen class is like this.
 $ mvn exec:java -D"exec.mainClass"="org.sample.App"
 ```
 
+# How to compile a .jar file
+```bash
+$ mvn clean install 
+```
+This runs test and then compiling to the jar file that will be located at `target/someJarfile.jar`
+
 ## Screencasting of How to run maven projects   
 ![](res/video_run_javafx.gif)
 
