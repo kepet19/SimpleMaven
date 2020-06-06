@@ -2,7 +2,7 @@
 This is a repository for people starting out using maven on the terminal/vim.
 
 ## Reason for this project
-I am a student that like figure out things, instead of an Ide that do all of these things for me.  
+I am a student that like to figure out things, instead of an Ide that do all of these things for me.  
 I did this project because I find it hard to figure all of these things out.
 
 
@@ -21,8 +21,8 @@ alias \
 ![](video_create_javafx_project.gif)
 
 # How to run maven projects
-you have to `$ mvn clean compile` before you can run most of the projects
-the command for running a chosen class is like this.
+you have to run this command first `$ mvn clean compile` before you can run most of the projects.  
+the command for running a chosen class is like this.  
 ```bash
 $ mvn exec:java -D"exec.mainClass"="org.sample.App"
 ```
@@ -43,9 +43,8 @@ $ mvn test -Dtest=SomeClassHere
 
 
 # How to figure out dependencies management
-All the dependencies will be in your `pom.xml` file
-the section in your `pom.xml` file should look like this with dependencies.  
-If you know html, you can figure out how to add more dependencies.
+All the dependencies will be in your `pom.xml` file.  
+the section in your `pom.xml` file should look like this with dependencies.   
 ```xml
     <dependencies>
 
@@ -64,13 +63,13 @@ If you know html, you can figure out how to add more dependencies.
 
     </dependencies>
 ```
-
+If you know html, you can figure out how to add more dependencies.  
 for finding libs/dependencies use this website [mvnrepository.com](https://mvnrepository.com/).  
 
 
 ### If you are new to the terminal and other FAQ
 The dollar sign `$` means run as a normal user.  
-The hashtag sign `#` means run as a super user/root.
-libs means library
+The hashtag sign `#` means run as a super user/root.  
+libs means library  
 
 ### Pull request are welcome
