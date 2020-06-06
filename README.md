@@ -18,7 +18,7 @@ alias \
 ```
 
 ## Screencasting of How to create a maven project
-![](video_create_javafx_project.gif)
+![](res/video_create_javafx.gif)
 
 # How to run maven projects
 you have to run this command first `$ mvn clean compile` before you can run most of the projects.  
@@ -28,7 +28,7 @@ $ mvn exec:java -D"exec.mainClass"="org.sample.App"
 ```
 
 ## Screencasting of How to run maven projects   
-![](video_run_simple_maven.gif)
+![](res/video_run_javafx.gif)
 
 # How to test maven projects
 run all test
@@ -39,7 +39,6 @@ for testing specific class use this command
 ```bash
 $ mvn test -Dtest=SomeClassHere
 ```
-## Screencasting of How to test on maven projects
 
 
 # How to figure out dependencies management
