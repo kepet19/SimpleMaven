@@ -6,9 +6,9 @@ I am a student that like to figure out things, instead of an Ide that do all of 
 I did this project because I find it hard to figure all of these things out.
 
 
-# Mappings for creating maven projects.
+# Aliases for creating maven projects.
 
-These mappigs are for creating maven projects on the terminal.
+These aliases are for creating maven projects on the terminal.  
 put this is your `.bashrc` or `.zshrc`
 ```bash
 alias \
