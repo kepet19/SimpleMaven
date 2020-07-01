@@ -2,8 +2,8 @@
 This is a repository for people starting out using maven on the terminal/vim.
 
 ## Reason for this project
-I am a student that like to figure out things, instead of an Ide that do all of these things for me.  
-I did this project because I find it hard to figure all of these things out.
+I am a student that like to figure out things, instead of using an IDE that do all of these things for me.  
+I did this project because I find it hard to find any information on maven.
 
 
 # Aliases for creating maven projects.
