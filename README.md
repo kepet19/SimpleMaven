@@ -1,4 +1,4 @@
-# SimpleMaven
+# Simple Maven that is not so simple
 This is a repository for people starting out using maven on the terminal/vim.
 
 ## Reason for this project
