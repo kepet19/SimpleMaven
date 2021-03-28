@@ -21,11 +21,40 @@ alias \
 ![](res/video_create_javafx.gif)
 
 # How to run maven projects
-you have to run this command first `$ mvn clean compile` before you can run most of the projects.  
-the command for running a chosen class is like this.  
+The command for running a chosen main class is like this.  
 ```bash
-$ mvn exec:java -D"exec.mainClass"="org.sample.App"
+$ mvn clean compile exec:java -D"exec.mainClass"="org.sample.App"
 ```
+
+The `mvnccr` can find and list java main classes you can the chose
+what main class to run.
+If you copy it into a file remember too  to make it executable 
+`$ chmod +x mvnccr` 
+```bash
+#!/bin/bash
+
+# A tool to find main classes in a maven project.
+# the tool compiles the project and then launch the chosen main class.
+# The script should be launch in a directory with a `pom.xml` file.
+
+# Seperated by spaces
+javaMainClassList=$(grep -r "public static void main" . | \
+    sed -e "s,..src/main/java/,,g;\
+    s,.java: * public static void main(String\[] args) .*,,g; \
+    s,/,\.,g; s,\n, ,g")
+
+# Need word splitting, there is maybe a better way don't know
+options=($javaMainClassList)
+PS3='Please enter your choice: '
+select opt in "${options[@]}"
+do
+    echo "Comping and Running $opt"
+    mvn clean compile exec:java "-Dexec.mainClass=$opt"
+    break
+done
+
+```
+
 
 # How to compile a .jar file
 ```bash
