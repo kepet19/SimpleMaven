@@ -26,10 +26,12 @@ The command for running a chosen main class is like this.
 $ mvn clean compile exec:java -D"exec.mainClass"="org.sample.App"
 ```
 
-The `mvnccr` can find and list java main classes you can the chose
+The `mvncr` can find and list java main classes you can the chose
 what main class to run.
 If you copy it into a file remember too  to make it executable 
-`$ chmod +x mvnccr` 
+`$ chmod +x mvncr`
+You can run it with command auguments like `mvncr run` or `mvncr compile` or `mvncr clean`.
+If you do not write anything it will automatically do a clean compile.
 ```bash
 #!/bin/bash
 
@@ -46,9 +48,22 @@ javaMainClassList=$(grep -r "public static void main" . | \
 PS3='Please select java class to run: '
 select opt in $javaMainClassList
 do
-    echo "Comping and Running $opt"
-    mvn clean compile exec:java "-Dexec.mainClass=$opt"
-    break
+    case "$1" in
+        "run")
+            printf '\x1b[31m %b \x1b[m' "\nrunning: $opt \n\n"
+            mvn clean compile exec:java "-Dexec.mainClass=$opt"
+            break
+            ;;
+        "compile")
+            printf '\x1b[34m %b \x1b[m' "\ncompile and running: $opt \n\n"
+            mvn compile exec:java "-Dexec.mainClass=$opt"
+            break
+            ;;
+        "clean"|*)
+            printf '\x1b[35m %b \x1b[m' "\nclean, compile and running: $opt \n\n"
+            mvn clean compile exec:java "-Dexec.mainClass=$opt"
+            break ;;
+    esac
 done
 ```
 
