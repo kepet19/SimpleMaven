@@ -41,18 +41,15 @@ If you copy it into a file remember too  to make it executable
 javaMainClassList=$(grep -r "public static void main" . | \
     sed -e "s,..src/main/java/,,g;\
     s,.java: * public static void main(String\[] args) .*,,g; \
-    s,/,\.,g; s,\n, ,g")
+    s,/,\.,g;")
 
-# Need word splitting, there is maybe a better way don't know
-options=($javaMainClassList)
-PS3='Please enter your choice: '
-select opt in "${options[@]}"
+PS3='Please select java class to run: '
+select opt in $javaMainClassList
 do
     echo "Comping and Running $opt"
     mvn clean compile exec:java "-Dexec.mainClass=$opt"
     break
 done
-
 ```
 
 
